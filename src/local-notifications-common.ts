@@ -184,6 +184,11 @@ export interface ScheduleOptions {
    * Buttons or text input.
    */
   actions?: Array<NotificationAction>;
+
+  threadIdentifier?: string;
+  /**
+   * For grouping notifications on iOS
+   */
 }
 
 export interface ReceivedNotification {

@@ -118,7 +118,8 @@ export class LocalNotificationsImpl extends LocalNotificationsCommon implements 
       // Notification content
       const content = UNMutableNotificationContent.new();
 
-      const {title, subtitle, body} = options;
+      const {title, subtitle, body, threadIdentifier } = options;
+      content.threadIdentifier = threadIdentifier;
       content.title = body || subtitle ? title : undefined;
       content.subtitle = body ? subtitle : undefined;
       // On iOS, a notification with no body won't show up, so the subtitle or title will be used in this case as body
